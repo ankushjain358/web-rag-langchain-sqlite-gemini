@@ -2,6 +2,7 @@
 ## Overview
 A concise proof-of-concept demonstrating Retrieval-Augmented Generation (RAG) applied to web page content. It uses LangChain for orchestration, SQLite with `sqlite-vec` for vector storage, and Google Gemini for embeddings and LLM responses.
 
+> Tip: You can use Google AI Studio to generate API Keys for free access to Google Gemini models. Visit [Google AI Studio](https://ai.google.dev/studio) to get started.
 
 ## Setup
 1. Clone the repository and navigate to the project directory.
@@ -11,6 +12,11 @@ A concise proof-of-concept demonstrating Retrieval-Augmented Generation (RAG) ap
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    pip install -r requirements.txt
    ```
+3. (Optional) Execute the SQLite demo script to test the dummy database creation:
+   ```bash
+   cd src
+   sqlite_demo.py
+   ```   
 3. Set up environment variables for Google Gemini API credentials:
    ```bash
    export GOOGLE_API_KEY="your_google_api_key" # On Windows use `set GOOGLE_API_KEY=your_google_api_key`
@@ -18,25 +24,27 @@ A concise proof-of-concept demonstrating Retrieval-Augmented Generation (RAG) ap
 4. Initialize the database and populate it with sample data:
    ```bash
    cd src
-   python database.py
+   database.py
    ```
 
 ## Ingestion
 To ingest data into the vector store, run the following command:
 ```bash
 cd src
-python ingest.py
+ingest.py
 ```
+When prompted, enter the URL of a web page or the path to a local file when prompted. The script will extract the content, split it into chunks, generate embeddings, and store everything in the SQLite database.
 
 ## Search/Retrieval
 To perform a search and retrieve relevant information, run the following command:
 ```bash
 cd src
-python search.py
+search.py
 ```
+When prompted, enter a natural language query related to the ingested content. The script will convert the query into an embedding, search for similar chunks in the vector store, and use the retrieved context to generate an answer via the LLM.
 
 
-## RAG Process
+## RAG Process used in this repository
 
 This repository implements a simple Retrieval-Augmented Generation (RAG) workflow that combines a vector store (SQLite + sqlite-vec) with Google Gemini embeddings and LLMs.
 
@@ -66,6 +74,7 @@ This repository implements a simple Retrieval-Augmented Generation (RAG) workflo
       python search.py      # run RAG search / QA
       ```
 
-
+# Conclusion
+This repository demonstrates a complete RAG pipeline using Google Gemini for both embeddings and generation, with a simple SQLite vector store for retrieval. It serves as a starting point for building more complex RAG applications that can handle larger datasets, multiple documents, and more sophisticated prompting strategies.
 
 
