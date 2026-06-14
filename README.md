@@ -2,8 +2,6 @@
 
 A minimal proof-of-concept for **Retrieval-Augmented Generation (RAG)** on web pages — using LangChain, SQLite + `sqlite-vec`, and Google Gemini.
 
----
-
 ## How it works
 
 ```
@@ -34,20 +32,15 @@ Web page / file
                                Answer ✓
 ```
 
----
+## RAG Architecture
 
-    ## RAG Architecture
+![RAG architecture](img/rag-architecture.png)
 
-    ![RAG architecture](img/rag-architecture.png)
-
-    ---
-
-    ## Prerequisites
+## Prerequisites
 
 - Python 3.9+
 - A free Google Gemini API key from [Google AI Studio](https://ai.google.dev/studio)
 
----
 
 ## Quickstart
 
@@ -78,8 +71,6 @@ search.py        # prompts you for a natural-language query
 
 > **Optional:** Run `python sqlite_demo.py` from `src/` to verify your SQLite + sqlite-vec setup before ingesting real data.
 
----
-
 ## Project structure
 
 ```
@@ -89,8 +80,6 @@ src/
 ├── search.py       # Query → embed → KNN search → LLM answer
 └── sqlite_demo.py  # Sanity-check script for the DB setup
 ```
-
----
 
 ## Notes
 
