@@ -36,7 +36,13 @@ Web page / file
 
 ---
 
-## Prerequisites
+    ## RAG Architecture
+
+    ![RAG architecture](img/rag-architecture.png)
+
+    ---
+
+    ## Prerequisites
 
 - Python 3.9+
 - A free Google Gemini API key from [Google AI Studio](https://ai.google.dev/studio)
