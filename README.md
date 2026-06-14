@@ -64,10 +64,10 @@ cd src
 database.py
 
 # 6. Ingest a web page or local file
-python ingest.py        # prompts you for a URL or file path
+ingest.py        # prompts you for a URL or file path
 
 # 7. Ask a question
-python search.py        # prompts you for a natural-language query
+search.py        # prompts you for a natural-language query
 ```
 
 > **Optional:** Run `python sqlite_demo.py` from `src/` to verify your SQLite + sqlite-vec setup before ingesting real data.
