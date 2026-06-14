@@ -57,13 +57,16 @@ pip install -r requirements.txt
 # 3. Add your API key
 export GOOGLE_API_KEY="your_google_api_key"       # Windows: set GOOGLE_API_KEY=...
 
-# 4. Initialize the database
-cd src && python database.py
+# 4. Navigate to the source code directory
+cd src 
 
-# 5. Ingest a web page or local file
+# 5. Initialize the database
+database.py
+
+# 6. Ingest a web page or local file
 python ingest.py        # prompts you for a URL or file path
 
-# 6. Ask a question
+# 7. Ask a question
 python search.py        # prompts you for a natural-language query
 ```
 
