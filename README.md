@@ -49,19 +49,21 @@ Web page / file
 # 1. Clone and set up
 git clone https://github.com/ankushjain358/web-rag-langchain-sqlite-gemini.git
 cd web-rag-langchain-sqlite-gemini
+
+# 2. Create a virtual environment and install dependencies
 python -m venv venv && source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# 2. Add your API key
+# 3. Add your API key
 export GOOGLE_API_KEY="your_google_api_key"       # Windows: set GOOGLE_API_KEY=...
 
-# 3. Initialize the database
+# 4. Initialize the database
 cd src && python database.py
 
-# 4. Ingest a web page or local file
+# 5. Ingest a web page or local file
 python ingest.py        # prompts you for a URL or file path
 
-# 5. Ask a question
+# 6. Ask a question
 python search.py        # prompts you for a natural-language query
 ```
 
